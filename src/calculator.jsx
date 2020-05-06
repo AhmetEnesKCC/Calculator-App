@@ -8,6 +8,13 @@ class Calculator extends React.Component {
     var val = document.getElementsByName("input")[0];
     val.value = "0"
     val.style.fontSize = "80px"
+    for ( var a = 0; a < document.getElementsByClassName("grid-item").length; a++) {
+      document.getElementsByClassName("grid-item")[a].style.pointerEvents = "visible"
+    } 
+  }
+  empty() {
+    var val = document.getElementsByName("input")[0];
+    val.value = "ERROR"
   }
   inputNumbers(num) {
     var val = document.getElementsByName("input")[0];
@@ -44,9 +51,15 @@ class Calculator extends React.Component {
     }
     if (val.value.length > 15) {
       val.value = "ERROR 404"
-      val.readOnly = "true"
+      document.getElementsByClassName("inputCalc")[0].style.textAlign = "center"
+      for ( var a = 0; a < document.getElementsByClassName("grid-item").length; a++) {
+        document.getElementsByClassName("grid-item")[a].style.pointerEvents = "none"
+      } 
+        document.getElementsByClassName("AC")[0].style.pointerEvents = "visible"
       
     }
+     
+    
     
     }
   }
@@ -60,7 +73,11 @@ class Calculator extends React.Component {
     if (sym === "X") {
       sym = "*"
     }
-    val.value = val.value + sym
+    if ( val.value !== "0") {
+      if ( val.value.match(/\d$/gi)) {
+        val.value = val.value + " " + sym + " "
+      }
+    }
    
   }
   plusMinus() {
