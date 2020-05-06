@@ -11,6 +11,7 @@ class Calculator extends React.Component {
   }
   inputNumbers(num) {
     var val = document.getElementsByName("input")[0];
+    var media =  window.matchMedia("(max-width: 576px)")
     if ( val.value === "0") {
       val.value = val.value.slice(0,-1)
       val.value += parseInt(num, 10)
@@ -18,13 +19,28 @@ class Calculator extends React.Component {
     else if ( val.value !== 0) {
       val.value += parseInt(num, 10)
     if (val.value.length > 5 && val.value.length < 10 ) {
-       val.style.fontSize = "50px"
+       if ( media.matches) {
+        val.style.fontSize = "15vw"
+       }
+       else {
+        val.style.fontSize = "50px"
+       }
     }
     else if(val.value.length < 5) {
-      val.style.fontSize = "80px"
+      if ( media.matches) {
+        val.style.fontSize = "20vw"
+       }
+       else {
+        val.style.fontSize = "80px"
+       }
     }
     else if (val.value.length > 10) {
-      val.style.fontSize = "30px"
+      if ( media.matches) {
+        val.style.fontSize = "10vw"
+       }
+       else {
+        val.style.fontSize = "30px"
+       }
     }
     if (val.value.length > 15) {
       val.value = "ERROR 404"

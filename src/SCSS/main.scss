@@ -112,7 +112,9 @@ user-select: none; /* Standard */
 
 @media (max-width: 576px) {
     html {
-        -webkit-tap-highlight-color: transparent
+        -webkit-tap-highlight-color: transparent;
+        overflow: hidden;
+        
       }
     .container {
         width: 100%;
@@ -120,6 +122,7 @@ user-select: none; /* Standard */
         background-color: black;
         margin: 0px auto;
         position: relative;
+        overflow: hidden;
     }
     
     .inputCalc {
@@ -128,7 +131,8 @@ user-select: none; /* Standard */
         box-sizing: border-box;
         width: 90%;
         height: 10%;
-        right: 2%;
+        right: 0;
+        padding-left: 5%;
         background-color: black;
         color: white;
         font-size: 20vw;
@@ -143,7 +147,7 @@ user-select: none; /* Standard */
         width: 90%;
         height: 60%;
         left: 5%;
-        bottom: 5%;
+        bottom: 15%;
         grid-template-areas: 
         "AC plusMinus remain divide"
         "seven eight nine multiply"
@@ -152,22 +156,30 @@ user-select: none; /* Standard */
         "zero zero point equal";
         grid-row-gap: 8%;
         grid-column-gap: 8%;
-        padding: 5px;
+        padding: 6px;
         .grid-item {
             background-color: #333333;
             border-radius: 100%;
             width: 100%;
             height: 100%;
             border: none;
+            top: 0;
+            position: absolute;
             cursor: pointer;
+            box-shadow: 0 6px #272727;
             &:active {
                 background-color: rgb(34, 34, 34);
+                box-shadow: none;
+                top: 5px;
             }
         }
         .AC,.plusMinus,.remain {
             background-color: #a5a5a5;
+            box-shadow: 0 6px #777777;
             &:active {
                 background-color: #6b6b6b;
+                box-shadow: none;
+                top: 5px;
             }
         }
         .zero {
@@ -176,10 +188,13 @@ user-select: none; /* Standard */
         }
         .plus,.minus,.divide,.equal,.multiply {
             background-color: #21751e;
+            box-shadow: 0 6px #0e570c;
         }
         .plus,.minus,.divide,.equal,.multiply {
             &:active {
                 background-color: #a76400;
+                box-shadow: none;
+                top: 5px;
             }
             
         }

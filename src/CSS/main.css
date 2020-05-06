@@ -150,20 +150,23 @@ html {
 
 @media (max-width: 576px) {
   html {
-    -webkit-tap-highlight-color: transparent; }
+    -webkit-tap-highlight-color: transparent;
+    overflow: hidden; }
   .container {
     width: 100%;
     height: 100vh;
     background-color: black;
     margin: 0px auto;
-    position: relative; }
+    position: relative;
+    overflow: hidden; }
   .inputCalc {
     top: 10%;
     position: absolute;
     box-sizing: border-box;
     width: 90%;
     height: 10%;
-    right: 2%;
+    right: 0;
+    padding-left: 5%;
     background-color: black;
     color: white;
     font-size: 20vw;
@@ -176,31 +179,42 @@ html {
     width: 90%;
     height: 60%;
     left: 5%;
-    bottom: 5%;
+    bottom: 15%;
     grid-template-areas: "AC plusMinus remain divide" "seven eight nine multiply" "four five six minus" "one two three plus" "zero zero point equal";
     grid-row-gap: 8%;
     grid-column-gap: 8%;
-    padding: 5px; }
+    padding: 6px; }
     .grid-container .grid-item {
       background-color: #333333;
       border-radius: 100%;
       width: 100%;
       height: 100%;
       border: none;
-      cursor: pointer; }
+      top: 0;
+      position: absolute;
+      cursor: pointer;
+      box-shadow: 0 6px #272727; }
       .grid-container .grid-item:active {
-        background-color: #222222; }
+        background-color: #222222;
+        box-shadow: none;
+        top: 5px; }
     .grid-container .AC, .grid-container .plusMinus, .grid-container .remain {
-      background-color: #a5a5a5; }
+      background-color: #a5a5a5;
+      box-shadow: 0 6px #777777; }
       .grid-container .AC:active, .grid-container .plusMinus:active, .grid-container .remain:active {
-        background-color: #6b6b6b; }
+        background-color: #6b6b6b;
+        box-shadow: none;
+        top: 5px; }
     .grid-container .zero {
       width: 100%;
       border-radius: calc(67px / 2); }
     .grid-container .plus, .grid-container .minus, .grid-container .divide, .grid-container .equal, .grid-container .multiply {
-      background-color: #21751e; }
+      background-color: #21751e;
+      box-shadow: 0 6px #0e570c; }
     .grid-container .plus:active, .grid-container .minus:active, .grid-container .divide:active, .grid-container .equal:active, .grid-container .multiply:active {
-      background-color: #a76400; }
+      background-color: #a76400;
+      box-shadow: none;
+      top: 5px; }
   .one {
     grid-area: one; }
   .two {
