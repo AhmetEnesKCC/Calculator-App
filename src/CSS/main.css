@@ -147,3 +147,127 @@ html {
 
 .grey {
   color: #000000; }
+
+@media (max-width: 576px) {
+  html {
+    -webkit-tap-highlight-color: transparent; }
+  .container {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    margin: 0px auto;
+    position: relative; }
+  .inputCalc {
+    top: 10%;
+    position: absolute;
+    box-sizing: border-box;
+    width: 90%;
+    height: 10%;
+    right: 2%;
+    background-color: black;
+    color: white;
+    font-size: 20vw;
+    text-align: right;
+    border: none;
+    outline: none; }
+  .grid-container {
+    display: grid;
+    position: absolute;
+    width: 90%;
+    height: 60%;
+    left: 5%;
+    bottom: 5%;
+    grid-template-areas: "AC plusMinus remain divide" "seven eight nine multiply" "four five six minus" "one two three plus" "zero zero point equal";
+    grid-row-gap: 8%;
+    grid-column-gap: 8%;
+    padding: 5px; }
+    .grid-container .grid-item {
+      background-color: #333333;
+      border-radius: 100%;
+      width: 100%;
+      height: 100%;
+      border: none;
+      cursor: pointer; }
+      .grid-container .grid-item:active {
+        background-color: #222222; }
+    .grid-container .AC, .grid-container .plusMinus, .grid-container .remain {
+      background-color: #a5a5a5; }
+      .grid-container .AC:active, .grid-container .plusMinus:active, .grid-container .remain:active {
+        background-color: #6b6b6b; }
+    .grid-container .zero {
+      width: 100%;
+      border-radius: calc(67px / 2); }
+    .grid-container .plus, .grid-container .minus, .grid-container .divide, .grid-container .equal, .grid-container .multiply {
+      background-color: #21751e; }
+    .grid-container .plus:active, .grid-container .minus:active, .grid-container .divide:active, .grid-container .equal:active, .grid-container .multiply:active {
+      background-color: #a76400; }
+  .one {
+    grid-area: one; }
+  .two {
+    grid-area: two; }
+  .three {
+    grid-area: three; }
+  .four {
+    grid-area: four; }
+  .five {
+    grid-area: five; }
+  .six {
+    grid-area: six; }
+  .seven {
+    grid-area: seven; }
+  .eight {
+    grid-area: eight; }
+  .nine {
+    grid-area: nine; }
+  .zero {
+    grid-area: zero; }
+  .equal {
+    grid-area: equal; }
+  .plus {
+    grid-area: plus; }
+  .plusMinus {
+    grid-area: plusMinus; }
+  .multiply {
+    grid-area: multiply; }
+  .remain {
+    grid-area: remain; }
+  .divide {
+    grid-area: divide; }
+  .AC {
+    grid-area: AC; }
+  .point {
+    grid-area: point; }
+  .minus {
+    grid-area: minus; }
+  .number {
+    position: absolute;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    text-align: center;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */ }
+  .symbol {
+    position: absolute;
+    width: 67px;
+    height: 67px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serifsive;
+    color: white;
+    text-align: center;
+    font-size: 37px;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */ }
+  .grey {
+    color: #000000; } }
