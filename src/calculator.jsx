@@ -1,4 +1,5 @@
 import React from "react";
+import DarkMode from "./components/darkMode.jsx" 
 
 import "./CSS/main.css";
 
@@ -10,11 +11,8 @@ class Calculator extends React.Component {
     val.style.fontSize = "80px"
     for ( var a = 0; a < document.getElementsByClassName("grid-item").length; a++) {
       document.getElementsByClassName("grid-item")[a].style.pointerEvents = "visible"
-    } 
-  }
-  empty() {
-    var val = document.getElementsByName("input")[0];
-    val.value = "ERROR"
+    }
+    document.getElementsByClassName("inputCalc")[0].style.textAlign = "right" 
   }
   inputNumbers(num) {
     var val = document.getElementsByName("input")[0];
@@ -25,7 +23,7 @@ class Calculator extends React.Component {
     }
     else if ( val.value !== 0) {
       val.value += parseInt(num, 10)
-    if (val.value.length > 5 && val.value.length < 10 ) {
+    if (val.value.length > 5 && val.value.length < 8 ) {
        if ( media.matches) {
         val.style.fontSize = "15vw"
        }
@@ -41,7 +39,7 @@ class Calculator extends React.Component {
         val.style.fontSize = "80px"
        }
     }
-    else if (val.value.length > 10) {
+    else if (val.value.length > 8) {
       if ( media.matches) {
         val.style.fontSize = "10vw"
        }
@@ -49,8 +47,8 @@ class Calculator extends React.Component {
         val.style.fontSize = "30px"
        }
     }
-    if (val.value.length > 15) {
-      val.value = "ERROR 404"
+    if (val.value.length > 12) {
+      val.value = "ERROR"
       document.getElementsByClassName("inputCalc")[0].style.textAlign = "center"
       for ( var a = 0; a < document.getElementsByClassName("grid-item").length; a++) {
         document.getElementsByClassName("grid-item")[a].style.pointerEvents = "none"
@@ -87,6 +85,7 @@ class Calculator extends React.Component {
   render() {
     return (
       <div className="container bgBlack">
+        <DarkMode/>
         <div className="inputCalcCont">
           <input  name="input" className="inputCalc" disabled value="0" type="text"/>
         </div>
